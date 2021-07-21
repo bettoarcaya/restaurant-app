@@ -76,29 +76,17 @@
 </template>
 
 <script>
-import PhotosList from "@/components/PhotosList.vue";
-import CommentsList from "@/components/CommentsList.vue";
-
 import axios from "axios";
 
 export default {
   name: "About",
-  components: {
-    PhotosList,
-    CommentsList,
-  },
   async mounted() {
     const url = `http://localhost:3000/restaurant/${this.$route.params.id}`;
 
-    await fetch(url, {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((r) => {
-        this.restaurant = r;
-        console.log(r);
-        return r;
-      });
+    axios.get(url).then((r) => {
+      this.restaurant = r.data;
+      return r;
+    });
   },
   data() {
     return {

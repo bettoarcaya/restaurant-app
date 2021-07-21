@@ -21,25 +21,17 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import axios from "axios";
 
 export default {
   name: "RestaurantList",
-  computed: {
-    ...mapGetters["getRestaurantList"],
-  },
   async mounted() {
     const url = `http://localhost:3000/restaurant`;
 
-    await fetch(url, {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((r) => {
-        this.restaurantList = r;
-        console.log(r);
-        return r;
-      });
+    axios.get(url).then((r) => {
+      this.restaurantList = r.data;
+      return r;
+    });
   },
   data() {
     return {
