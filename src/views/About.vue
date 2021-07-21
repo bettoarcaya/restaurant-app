@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="mt-5">
-        <h3 style="text-align: left;">Fotografias</h3>
+        <h3 class="orange-color" style="text-align: left;">Fotografias</h3>
       </div>
       <div class="row">
         <div
@@ -19,11 +19,11 @@
           v-for="photo in restaurant.photos"
           :key="photo.id"
         >
-          <img :src="photo.url" alt="" style="width:100%; height: 70%;" />
+          <img :src="photo.url" alt="" style="width:100%; height: 100%;" />
         </div>
       </div>
       <div class="mt-5">
-        <h3 style="text-align: left;">Commentarios</h3>
+        <h3 class="orange-color" style="text-align: left;">Commentarios</h3>
       </div>
       <div class="row">
         <div
@@ -33,7 +33,8 @@
         >
           <div style="text-align: left;">
             <h6>
-              <strong> {{ comment.userName }} </strong> el {{ comment.date }}
+              <strong class="orange-color"> {{ comment.userName }} </strong> el
+              {{ comment.date }}
             </h6>
             <p>
               {{ comment.userText }}
@@ -43,15 +44,17 @@
         </div>
         <div>
           <div class="mt-3">
-            <h5 style="text-align: left;">Escribir un nuevo comentario</h5>
+            <h5 class="orange-color" style="text-align: left;">
+              Escribir un nuevo comentario
+            </h5>
           </div>
           <div class="row">
             <div class="col-md-2">
-              <p>Nombre</p>
+              <p class="orange-color">Nombre</p>
               <input type="text" v-model="commentData.userName" />
             </div>
             <div class="col-md-12">
-              <p>Comentario</p>
+              <p class="orange-color">Comentario</p>
               <textarea
                 name="comment"
                 id="comment"
@@ -62,8 +65,9 @@
             </div>
             <div class="col-md-10 mt-2">
               <button
-                class="btn btn-primary btn-sm float-right"
+                class="btn btn-md float-right"
                 @click="loadComment"
+                style="background: orange;"
               >
                 Enviar
               </button>

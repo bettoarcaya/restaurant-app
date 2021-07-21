@@ -7,4 +7,12 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.orange-color {
+  color: orange;
+}
+
+.btn-color {
+  background: orange;
+}
+</style>
