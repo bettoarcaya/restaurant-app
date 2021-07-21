@@ -14,10 +14,14 @@
         <h3 class="orange-color" style="text-align: left;">Fotografias</h3>
       </div>
       <div class="row">
+        <div class="col-md-12 text-center" v-if="restaurant.photos.length == 0">
+          <p>Este sitio no tiene imagenes disponibles!</p>
+        </div>
         <div
           class="col-md-3"
           v-for="photo in restaurant.photos"
           :key="photo.id"
+          else
         >
           <img :src="photo.url" alt="" style="width:100%; height: 100%;" />
         </div>
@@ -27,9 +31,17 @@
       </div>
       <div class="row">
         <div
+          class="col-md-12 text-center"
+          v-if="restaurant.comments.length == 0"
+        >
+          <p>Aun no hay reviews para este sitio se el primero!</p>
+          <hr />
+        </div>
+        <div
           class="col-md-12"
           v-for="comment in restaurant.comments"
           :key="comment.id"
+          else
         >
           <div style="text-align: left;">
             <h6>
@@ -111,6 +123,7 @@ export default {
           userName: r.data.userName,
           userText: r.data.userText,
           id: r.data.id,
+          date: r.data.date,
         });
         return r;
       });

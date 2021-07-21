@@ -1,20 +1,24 @@
 <template>
   <div class="row">
-    <div v-for="restaurant in restaurantList" :key="restaurant.id">
-      <div
-        class="col-md-4"
-        style="cursor: pointer"
-        @click="goToDetail(restaurant.id)"
-      >
-        <div class="p-3">
-          <img :src="restaurant.logo" alt="" />
-        </div>
-        <div class="text-center">
-          <h3>{{ restaurant.name }}</h3>
-        </div>
-        <div class="text-center">
-          <span> {{ restaurant.description }} </span>
-        </div>
+    <div
+      class="col-md-4 mb-5"
+      style="cursor: pointer;"
+      @click="goToDetail(restaurant.id)"
+      v-for="restaurant in restaurantList"
+      :key="restaurant.id"
+    >
+      <div class="">
+        <img
+          :src="restaurant.logo"
+          alt=""
+          style="width: 100%; height: 210px;"
+        />
+      </div>
+      <div class="text-center">
+        <h3>{{ restaurant.name }}</h3>
+      </div>
+      <div class="text-left">
+        <span> {{ restaurant.description }} </span>
       </div>
     </div>
   </div>

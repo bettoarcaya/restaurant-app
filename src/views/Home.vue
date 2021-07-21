@@ -1,10 +1,12 @@
 <template>
   <div class="home">
-    <div class="container-fuid mt-5 text-center">
+    <div class="container mt-5">
       <h1 class="text-center">Restaurant hub</h1>
-      <span>
-        Listado de restaurantes disponibles para visitar y opinar sobre ellos
-      </span>
+      <div class="text-center">
+        <span>
+          Listado de restaurantes disponibles para visitar y opinar sobre ellos
+        </span>
+      </div>
       <div class="mt-5">
         <RestaurantList />
       </div>
